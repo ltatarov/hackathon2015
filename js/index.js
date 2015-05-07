@@ -1,27 +1,25 @@
 $(document).ready(function() {
 
   // registration flow
-  // if (document.cookie.indexOf("mp-hackathon-user") < 0) {
-  //   $('#mainContainer').hide();
-  //   $('#login').modal('show') ;
-  //
-  //   $('#submitName').click(function(){
-  //     var name = $("#nameTextbox").val();
-  //     if (name ) {
-  //       $.post( "/api/register", {'name': name}, function( data ) {
-  //         $('#login').modal('hide');
-  //       });
-  //       $('#mainContainer').show();
-  //       getNextItem();
-  //     } else {
-  //       alert("Please enter a username");
-  //     }
-  //   });
-  // } else {
-  //   getNextItem();
-  // }
+  if (document.cookie.indexOf("mp-hackathon-user") < 0) {
+    $('#mainContainer').hide();
+    $('#login').modal('show') ;
 
-  getNextItem();
+    $('#submitName').click(function(){
+      var name = $("#nameTextbox").val();
+      if (name ) {
+        $.post( "/api/register", {'name': name}, function( data ) {
+          $('#login').modal('hide');
+        });
+        $('#mainContainer').show();
+        getNextItem();
+      } else {
+        alert("Please enter a username");
+      }
+    });
+  } else {
+    getNextItem();
+  }
 
   function getNextItem() {
     $.ajax({

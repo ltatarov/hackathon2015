@@ -32,6 +32,7 @@ $(document).ready(function() {
 		        $("#title").text(data.title);
 		        $("#description").text(data.description);
 		        $("#itemId").val(data.id);
+				$("#answerText").val("");
 		    },
 		    statusCode: {
 	    		404: function() {

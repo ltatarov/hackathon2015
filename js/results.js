@@ -16,8 +16,7 @@ $(document).ready(function() {
 			html = html.replace(/{title}/g, item.title);
 			html = html.replace(/{guess}/g, item.guess);
 
-			var percent = item.numResults / expectedNumberOfVotes * 100 ;
-		//	var percent = item.numResults <= expectedNumberOfVotes ? item.numResults : expectedNumberOfVotes;
+			var percent = Math.round(item.numResults / expectedNumberOfVotes * 100) ;
 
 			if (percent == 100) {
 				html = html.replace(/{progress}/g, "€ " + item.avg)

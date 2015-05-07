@@ -2,9 +2,8 @@
   font-family: 'Roboto', sans-serif;
 }
 
-#logo {
-  height: 25px;
-  width: 35px;
+a {
+  text-decoration: none;
 }
 
 .jumbotron {
@@ -13,8 +12,16 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  text-shadow: black 0.3em 0.3em 0.3em;
   font-family: 'Slabo 27px', serif;
+}
+
+#logo {
+  text-shadow: black 0.3em 0.3em 0.3em;
+  letter-spacing: 2px;
+}
+
+#menu {
+  margin-top: 20px;
 }
 
 #description {

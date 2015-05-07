@@ -11,9 +11,9 @@
   <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <script src="js/jquery.cookie.js"></script>
-  <link rel="stylesheet" href="css/stylesheet.css">
   <script src="js/common.js"></script>
   <script src="js/index.js"></script>
+  <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
           <h4 class="modal-title">Who are you?</h4>
         </div>
         <div class="modal-body">
-          <form class="form-inline text-center">
+          <form id="login-form" class="form-inline text-center">
             <div class="form-group center-block">
               <div class="input-group">
                 <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div id="mainContainer" class="jumbotron">
+  <div id="header" class="jumbotron">
     <div class="container">
       <div class="row">
         <div class="col-xs-6 col-md-4">
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div id="main" class="container">
     <input id="itemId" type="hidden"/>
 
     <h2 id="title" class="text-center"></h2>
@@ -68,7 +68,7 @@
       <div class="form-group center-block">
         <div class="input-group">
           <div class="input-group-addon">€</div>
-          <input id="answerText" type="text" class="form-control" placeholder="Amount (in euros)">
+          <input id="answerText" type="number" class="form-control" placeholder="Amount (in euros)">
         </div>
       </div>
       <button id="submitAnswer" type="button" class="btn btn-success">

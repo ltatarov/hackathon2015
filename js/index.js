@@ -1,8 +1,17 @@
 $(document).ready(function() {
 
+  $('#guess-form').submit(function() {
+    return false;
+  });
+
+  $('#login-form').submit(function() {
+    return false;
+  });
+
   // registration flow
-  if (document.cookie.indexOf("mp-hackathon-userid") < 0) {
-    $('#mainContainer').hide();
+  if (! $.cookie("mp-hackathon-userid")) {
+    $('#header').hide();
+    $('#main').hide();
     $('#login').modal('show') ;
 
     $('#submitName').click(function(){
@@ -11,7 +20,8 @@ $(document).ready(function() {
         $.post( "/api/register", {'name': name}, function( data ) {
           $('#login').modal('hide');
         });
-        $('#mainContainer').show();
+        $('#header').show();
+        $('#main').show();
         getNextItem();
       } else {
         window.location.href = "done.html"
@@ -34,7 +44,6 @@ $(document).ready(function() {
       },
       statusCode: {
         404: function() {
-          // handle 404
           window.location.href = "done.html"
         }
       }

@@ -52,12 +52,14 @@
     </div>
   </div>
 
-  <div class="container">
-    <h2 class="text-center">iPhone 5 32GB</h2>
+  <div id="mainContainer" class="container">
+    <input id="itemId" type="hidden"/>
 
-    <img id="image" class="img-responsive img-rounded center-block" src="http://i.marktplaats.com/00/s/NzI2WDU0NQ==/z/d1cAAOSwymxVRhI8/$_85.JPG">
+    <h2 id="title" class="text-center"></h2>
 
-    <p id="description" class="text-center">No contract, color - black, with original charger.</p>
+    <img id="image" class="img-responsive img-rounded center-block" src="">
+
+    <p id="description" class="text-center"></p>
 
     <form id="guess-form" class="form-inline text-center">
       <div class="form-group center-block">
@@ -66,10 +68,10 @@
           <input type="text" class="form-control" placeholder="Amount (in euros)">
         </div>
       </div>
-      <button type="submit" class="btn btn-success">
+      <button id="submitAnswer" type="submit" class="btn btn-success">
         <span class="glyphicon glyphicon-ok"></span> Submit
       </button>
-      <button type="button" class="btn btn-default">
+      <button id="skipItem" type="button" class="btn btn-default">
         <span class="glyphicon glyphicon-arrow-right"></span> Skip
       </button>
     </form>

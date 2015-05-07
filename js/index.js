@@ -1,18 +1,61 @@
 $(document).ready(function() {
 
+	// registration flow
     if (document.cookie.indexOf("mp-hackathon-user") < 0) {
-        $('#login').modal('show') ;
+
+    	$('#mainContainer').hide();
+
+        // $('#login').modal('show') ;
 
 		$('#submitName').click(function(){
 			var name = $("#nameTextbox").val();
 			if (name ) {
 				$.post( "http://localhost:5000/register", {'name': name}, function( data ) {
-					$('#login').modal('hide') ;				
-				});        
+					$('#login').modal('hide');				
+				}); 
+				$('#mainContainer').show();   
+				getNextItem();
 			} else {
 				alert("Please enter a username");
-			}      
+			}  
 		});	
+	} else {
+		getNextItem();
 	}
+
+	function getNextItem() {
+		$.ajax({
+		    type: 'GET',
+		    url: '/item',
+		    success: function(data){
+		        $("#image").attr("src", data.photo);
+		        $("#title").text(data.title);
+		        $("#description").text(data.description);
+		        $("#itemId").val(data.id);
+		    },
+		    statusCode: {
+	    		404: function() {
+		    		// handle 404
+		    		$('#mainContainer').hide();
+		    		alert("No more items available, thanks for playing :)");
+		    	}
+		    }
+		});
+
+	}
+
+	$("#submitAnswer").click(function() {
+		var answer = $("#answerText").val()
+		if (answer && !isNaN(answer)) {
+			$.post("/api/answer", {"id": $("#itemId").val(), "price": answer});
+			getNextItem();
+		} else {
+			alert("please enter a guess (or skip)");
+		}		
+	});
+
+	$("#skipItem").click(function() {
+		getNextItem();
+	});
 	
 });

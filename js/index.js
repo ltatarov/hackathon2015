@@ -5,12 +5,12 @@ $(document).ready(function() {
 
     	$('#mainContainer').hide();
 
-        // $('#login').modal('show') ;
+		$('#login').modal('show') ;
 
 		$('#submitName').click(function(){
 			var name = $("#nameTextbox").val();
 			if (name ) {
-				$.post( "http://localhost:5000/register", {'name': name}, function( data ) {
+				$.post( "/api/register", {'name': name}, function( data ) {
 					$('#login').modal('hide');				
 				}); 
 				$('#mainContainer').show();   
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	function getNextItem() {
 		$.ajax({
 		    type: 'GET',
-		    url: '/item',
+		    url: '/api/item',
 		    success: function(data){
 		        $("#image").attr("src", data.photo);
 		        $("#title").text(data.title);
@@ -45,7 +45,8 @@ $(document).ready(function() {
 	}
 
 	$("#submitAnswer").click(function() {
-		var answer = $("#answerText").val()
+		var answer = $("#answerText").val();
+		console.log(answer);
 		if (answer && !isNaN(answer)) {
 			$.post("/api/answer", {"id": $("#itemId").val(), "price": answer});
 			getNextItem();

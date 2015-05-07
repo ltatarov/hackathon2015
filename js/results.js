@@ -1,31 +1,35 @@
 $(document).ready(function() {
 
-	var row = "<tr class=\"${success}\">
-				<td><img class=\"img-responsive img-rounded img-results\" src=\"${img_url}\"></td>
-				<td>${title}</td>
-	            <td>€ ${guess}</td>
-	            <td><div class=\"progress\"><div class=\"progress-bar progress-bar-info progress-bar-striped\" style=\"width: ${perc_completed}%\"/></div></td>
-      		</tr>";
+	var progress = '<div class="progress"><div class="progress-bar progress-bar-info progress-bar-striped" style="width: {perc_completed}%"/></div></div>';
+	var row = '<tr> <td><img class="img-responsive img-rounded img-results" src="{img_url}"></td> <td class="{success}">{title}</td> <td class="{success}">€ {guess}</td> <td>{progress}</td> </tr>';
 
-	var userId = $.cookie("mp-hackathon-userid");      		
+	var userId = $.cookie("mp-hackathon-userid");
 
-    $.get("/api/result/" + userId, function(data) {
-    	var items = data.items;
-    	items.each(function() {
+	var expectedNumberOfVotes = 5;
 
-    		// create new HTML element for row
-    		var item = $(this);
-    		var html = row.replace("${img_url}", item.img);
-    		html = html.replace("${title}", item.title);
-    		html = html.replace("${guess}", item.guess);
-    		var percent = item.numResults <= 100 ? item.numResults : 100;
-    		html = html.replace("${perc_completed}", percent);
-    		var successClass = item.numResults >= 100 ? "success" : "";
-    		html = html.replace("${success}", successClass);
-    		// append to list
-    		$("#resultsBody").append(html);
-    	});
-    });  		
+	$.get("/api/results/" + userId, function(data) {
+		// TODO edge case - no results yet!
 
+		$.each(data.items, function(key, item) {
+			// create new HTML element for row
+			var html = row.replace(/{img_url}/g, item.photo);
+			html = html.replace(/{title}/g, item.title);
+			html = html.replace(/{guess}/g, item.guess);
 
+			var percent = item.numResults / expectedNumberOfVotes * 100 ;
+		//	var percent = item.numResults <= expectedNumberOfVotes ? item.numResults : expectedNumberOfVotes;
+
+			if (percent == 100) {
+				html = html.replace(/{progress}/g, "€ " + item.avg)
+			} else {
+				var completion = progress.replace(/{perc_completed}/g, percent)
+				html = html.replace(/{progress}/g, completion);
+			}
+
+			var successClass = item.numResults >= expectedNumberOfVotes ? "text-success" : "";
+			html = html.replace(/{success}/g, successClass);
+			// append to list
+			$("#resultsBody").append(html);
+		});
+	});
 });

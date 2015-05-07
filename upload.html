@@ -49,23 +49,32 @@
 				width: 400px;
 				border-top: 2px solid #3a372f;
 				border-bottom: 2px solid #3a372f;
+			}
+
+			table {
+				width: 100%;
 			}	
 			
 			.item-img {
 				max-width: 146px;
-				max-height: 146px;
+				max-height: 100px;
 			}	
 
-			.item-img-container {
+			td.item-img-container {
+				/*width: 150px;*/
 				width: 30%;
 			}	
 
-			.item-title-container {
-				width: 40%;
+			td.item-title-container {
+				width: 30%;
 			}
 
-			.item-indicator-container {
-				width: 200px;
+			td.item-indicator-container {
+				width: 15%;
+			}
+
+			td.item-price-container {
+				width: 15%;
 			}
 
 			.button {
@@ -81,6 +90,20 @@
 				-moz-border-radius: 6px;
 				border-radius: 6px;
 			}
+
+			tr {
+				color: white;
+				border-bottom: 1px solid #3a372f;				
+			}
+
+			tr.first {
+				border-top: 1px solid #3a372f;
+			}
+
+			td {
+				padding: 5px 0;
+			}
+
 
 		</style>
 		
@@ -102,35 +125,36 @@
 								<span class="font2" style="font-size: 18px; padding-top: 3px;">HiveMind</span>
 							</div>
 
-							<div style="margin-top: 10px; float: left;">
-								<ul id="items">
-									<li class="lst-item" >
-										<span class="item-img-container"><img class="item-img" src="http://i.marktplaats.com/00/s/NzI2WDU0NQ==/z/d1cAAOSwymxVRhI8/$_84.JPG"></span>
-										<span class="item-title-container">
-											iPhone 5 64GB
-										</span>
-										<span class="item-indicator-container">
-											76%
-										</span>
-										<span class="item-price-container">
-											---
-										</span>
-									</li>
-									<li class="lst-item" >
-										<span class="item-img-container"><img class="item-img" src="http://i.marktplaats.com/00/s/MzAxWDIyNQ==/z/ReEAAOSwv0tVQ5AE/$_84.JPG"></span>
-										<span class="item-title-container">
-											
-										</span>
-										<span class="item-indicator-container">
-											76%
-										</span>
-										<span class="item-price-container">
-											---
-										</span>
-									</li>
-									<li></li>
-									<li></li>
-								</ul>
+							<div style="margin-top: 10px; text-align: center;">
+
+								<table>
+									<tr>
+										<th></th>
+										<th></th>
+										<th style="text-align:center;">your guess</th>
+										<th style="text-align:center;">result</th>
+										
+									</tr>
+									<tr class="first">
+										<td class="item-img-container"><img class="item-img" src="http://i.marktplaats.com/00/s/NzI2WDU0NQ==/z/d1cAAOSwymxVRhI8/$_84.JPG"></td>
+										<td class="item-title-container">iPhone 5 64GB</td>
+										<td class="item-price-container">€140</td>
+										<td class="item-indicator-container">76%</td>	
+									</tr>
+									<tr>
+										<td class="item-img-container"><img class="item-img" src="http://i.marktplaats.com/00/s/NTQ1WDcyNg==/z/SIwAAOSwNSxVSpeT/$_84.JPG"></td>
+										<td class="item-title-container">iPhone 5 64GB</td>
+										<td class="item-price-container">€142</td>
+										<td class="item-indicator-container">Done</td>
+									</tr>
+									<tr>
+										<td class="item-img-container"><img class="item-img" src="http://i.marktplaats.com/00/s/MzAxWDIyNQ==/z/ReEAAOSwv0tVQ5AE/$_84.JPG"></td>
+										<td class="item-title-container">iPhone 5 64GB</td>
+										<td class="item-price-container">€35</td>
+										<td class="item-indicator-container">42%</td>
+									</tr>									
+								</table>
+
 							</div>
 						</div>
 					</div>

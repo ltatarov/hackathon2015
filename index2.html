@@ -7,12 +7,30 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
+  <script src="js/jquery.colorbox-min.js"></script>  
   <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
+
+  
+  <script type="text/javascript">
+
+    // TODO: check if already registered 
+
+    $.colorbox({html:"<div id='register' style='padding:10px; background-image: url(\"img/welcome.png\"); border-radius: 3px; width: 300px; height:400px;'><p style='color: white;'><strong>Please enter a username<stong></p><input type='text'><div><input id='submitName' style='margin-top: 10px;' type='button' value='submit'></div></div>",
+      transition: "fade",
+      overlayClose: false,
+      closeButton: false
+    });
+
+    $('#submitName').click(function(){
+      // TODO: insert AJAX call to register
+      $("#register").css({"display":"none"});
+    });
+  </script>
 
   <!--home start-->
 

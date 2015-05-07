@@ -10,22 +10,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/common.js"></script>
   <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
 
-  <!--home start-->
-
-  <div class="jumbotron">
+  <div id="mainContainer" class="jumbotron">
     <div class="container">
-      <h2 id="logo" class="pull-left">
-        <span class="glyphicon glyphicon-bullhorn"></span> WOCr
-      </h2>
-
-      <div id="menu" class="pull-right text-right">
-        <div>Hey, Taborda!</div>
-        <div><a href="index.html">Play the game <span class="glyphicon glyphicon-play-circle"></span></a></div>
-        <div><a href="leaderboard.html">Leaderboard <span class="glyphicon glyphicon-stats"></span></a></div>
+      <div class="row">
+        <div class="col-xs-6 col-md-4">
+          <h2 id="logo">
+            <span class="glyphicon glyphicon-bullhorn"></span> WOCr
+          </h2>
+        </div>
+        <div id="menu" class="col-xs-6 col-md-8 text-right">
+          <div>Hey, <span id="username">stranger</span>!</div>
+          <div><a href="index.html">Play the game <span class="glyphicon glyphicon-play-circle"></span></a></div>
+          <div><a href="leaderboard.html">Leaderboard <span class="glyphicon glyphicon-stats"></span></a></div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // registration flow
-  if (document.cookie.indexOf("mp-hackathon-user") < 0) {
+  if (document.cookie.indexOf("mp-hackathon-userid") < 0) {
     $('#mainContainer').hide();
     $('#login').modal('show') ;
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
         $('#mainContainer').show();
         getNextItem();
       } else {
-        alert("Please enter a username");
+        window.location.href = "done.html"
       }
     });
   } else {
@@ -35,8 +35,7 @@ $(document).ready(function() {
       statusCode: {
         404: function() {
           // handle 404
-          $('#mainContainer').hide();
-          alert("No more items available, thanks for playing :)");
+          window.location.href = "done.html"
         }
       }
     });

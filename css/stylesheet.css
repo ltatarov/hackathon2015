@@ -70,3 +70,14 @@ a:hover {
 #menu > div > a > span {
   margin-left: 10px ;
 }
+
+#welldone > span {
+  font-size: 140pt;
+  color: #aeaeae;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#welldone > p > a {
+  color: #1a1aff;
+}

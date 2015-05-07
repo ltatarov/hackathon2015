@@ -4,10 +4,16 @@
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: grey;
 }
 
 .jumbotron {
-  background-image: url(../img/crowd.jpg);
+  background-image: url(../img/concert_crowd_sepiablue.png);
   background-position: 25% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +27,7 @@ a {
 }
 
 #menu {
-  margin-top: 20px;
+  vertical-align: middle;
 }
 
 #description {
@@ -35,6 +41,24 @@ a {
   margin-top: 20px
 }
 
-form {
+.img-results {
+  max-width: 146px;
+  max-height: 100px;
+  margin: 0 auto;
+}
+
+#guess-form {
   margin-top: 40px;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+#menu > div:first-child {
+  margin-bottom: 8px;
+}
+
+#menu > div > a > span {
+  margin-left: 10px ;
 }

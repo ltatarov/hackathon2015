@@ -1,113 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-		<title>Timber</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+<head>
+  <title>WOC This Way!</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="js/index.js"></script>
+</head>
+<body>
 
-		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+  <div id="login" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Who are you?</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline text-center">
+            <div class="form-group center-block">
+              <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                <input type="text" class="form-control" placeholder="Your username">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-default">
+              <span class="glyphicon glyphicon-ok"></span> OK
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-		<style type="text/css">
-			.clearfix {
-			  	overflow: auto;
-			}
-			.font1 {
-				font-family: 'Roboto', 'sans-serif';
-			}
+  <div class="jumbotron">
+    <div class="container">
+      <h2 id="logo" class="pull-left">
+        <span class="glyphicon glyphicon-bullhorn"></span> WOC This Way!
+      </h2>
 
-			.font2 {
-				font-family: 'Tahoma', 'sans-serif';
-			}
+      <div id="menu" class="pull-right text-right">
+        <div>Hey, Taborda!</div>
+        <div><a href="results.html">Check your results <span class="glyphicon glyphicon-tasks"></span></a></div>
+        <div><a href="leaderboard.html">Leaderboard <span class="glyphicon glyphicon-stats"></span></a></div>
+      </div>
+    </div>
+  </div>
 
-			.button {
-				padding: 3px 2px;
-				/*
-				border: 2px solid #FFF3E5;
-				color: #FFF3E5;
-				*/
-			}
-			.button:hover {
-				border: 2px solid ##1c1c1c;
-				color: #1c1c1c;
-				cursor: pointer;
-			}
-			.price {
-				font-family: 'Roboto', 'sans-serif';
-				font-weight: 300;
-				border: 0;
-				background: #1c1c1c;
-				color: #fff;
-				padding: 11px;
-				width: 350px;
-				border-radius: 4px 0px 0px 4px;
-				padding-left: 20px;
-			}
-			.bord-rad {
-				-webkit-border-radius: 6px;
-				-moz-border-radius: 6px;
-				border-radius: 6px;
-			}
+  <div class="container">
+    <h2 class="text-center">iPhone 5 32GB</h2>
 
-		</style>
+    <img id="image" class="img-responsive img-rounded center-block" src="http://i.marktplaats.com/00/s/NzI2WDU0NQ==/z/d1cAAOSwymxVRhI8/$_85.JPG">
 
-	</head>
-	<body>
+    <p id="description" class="text-center">No contract, color - black, with original charger.</p>
 
-    <!--home start-->
+    <form id="guess-form" class="form-inline text-center">
+      <div class="form-group center-block">
+        <div class="input-group">
+          <div class="input-group-addon">€</div>
+          <input type="text" class="form-control" placeholder="Amount (in euros)">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> Submit
+      </button>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-arrow-right"></span> Skip
+      </button>
+    </form>
 
-    <div id="home">
-    	<div class="headerLine" style="height: 700px;">
+  </div>
 
-		<div class="container">
-			<div class="row wrap">
-				<div class="gallery">
-					<div id="contentContainer" style="text-align: center">
-						<div class="img-responsive">
-							<div style="margin-top: 12px; text-align: left;">
-								<img src="logo.png" style="height: 25px; width: 35px;">
-								<span class="font2" style="font-size: 18px; padding-top: 3px;">HiveMind</span>
-							</div>
-							<div style="margin-top: 10px;">
-								<h2 style="color: #242422;" class="font1">iPhone 5 32GB</h2>
-							</div>
-							<div style="margin-top: 10px; height: 370px;">
-								<img class="image bord-rad"
-										style="max-height: 370px;
-												max-width: 370px;
-												border: 2px solid #3a372f"
-								 src="http://i.marktplaats.com/00/s/NzI2WDU0NQ==/z/d1cAAOSwymxVRhI8/$_85.JPG">
-							</div>
-							<div style="margin-top: 10px; height: 50px;">
-								<span style="color: #8c8777; font-size: 18px;" class="font1">No contract, color - black, with original charger.</span>
-							</div>
-							<div style="margin-top: 40px; margin-bottom: 30px;" class="font1">
-								<img class="button" src="ok.png" style="width: 65px;">
-								<input id="price" class="price" placeholder="€"
-									style=" width: 185px;
-										    background: #8d8877;
-  										    color: #3a372f;
-  										    font-size: 18px;"
-  								/>
-								<img class="button" src="next.png" style="margin-left: 15px; width: 40px;">
-								<!--
-								<span class="button" style="font-size: 26px;">Submit</span>
-								<span class="button" style="margin-left: 20px;">No idea ?&#</span>
-								-->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<script src="js/bootstrap.min.js"></script>
-
-	</body>
+</body>
 
 </html>

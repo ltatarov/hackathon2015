@@ -1,7 +1,7 @@
   <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>WOC This Way!</title>
+  <title>WOCr - Play the game!</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -26,10 +26,10 @@
             <div class="form-group center-block">
               <div class="input-group">
                 <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                <input id="nameTextbox" type="text" class="form-control" placeholder="Your username">
+                <input type="text" class="form-control" placeholder="Your username">
               </div>
             </div>
-            <button id="submitName" type="button" class="btn btn-default">
+            <button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-ok"></span> OK
             </button>
           </form>
@@ -40,25 +40,26 @@
 
   <div class="jumbotron">
     <div class="container">
-      <h2 id="logo" class="pull-left">
-        <span class="glyphicon glyphicon-bullhorn"></span> WOC This Way!
-      </h2>
-
-      <div id="menu" class="pull-right text-right">
-        <div>Hey, Taborda!</div>
-        <div><a href="results.html">Check your results <span class="glyphicon glyphicon-tasks"></span></a></div>
-        <div><a href="leaderboard.html">Leaderboard <span class="glyphicon glyphicon-stats"></span></a></div>
+      <div class="row">
+        <div class="col-xs-6 col-md-4">
+          <h2 id="logo">
+            <span class="glyphicon glyphicon-bullhorn"></span> WOCr
+          </h2>
+        </div>
+        <div id="menu" class="col-xs-6 col-md-8 text-right">
+          <div>Hey, Taborda!</div>
+          <div><a href="results.html">Check your results <span class="glyphicon glyphicon-tasks"></span></a></div>
+          <div><a href="leaderboard.html">Leaderboard <span class="glyphicon glyphicon-stats"></span></a></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="mainContainer" class="container">
+  <div class="container">
     <input id="itemId" type="hidden"/>
 
     <h2 id="title" class="text-center"></h2>
-
     <img id="image" class="img-responsive img-rounded center-block" src="">
-
     <p id="description" class="text-center"></p>
 
     <form id="guess-form" class="form-inline text-center">

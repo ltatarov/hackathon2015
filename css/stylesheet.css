@@ -9,7 +9,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: grey;
+  color: #aeaeae;
 }
 
 .jumbotron {
@@ -19,26 +19,34 @@ a:hover {
   background-repeat: no-repeat;
   color: white;
   font-family: 'Slabo 27px', serif;
+  margin-bottom: 50px;
 }
 
 #logo {
-  text-shadow: black 0.3em 0.3em 0.3em;
+  text-shadow: black 0.1em 0.1em 0.1em;
   letter-spacing: 2px;
+}
+
+#logo > span {
+  margin-right: 10px;
 }
 
 #menu {
   vertical-align: middle;
 }
 
+#title {
+  margin-bottom: 30px;
+}
+
 #description {
+  margin-top: 30px;
   font-size: 14pt;
-  margin-top: 20px;
 }
 
 #image {
   max-height: 370px;
   max-width: 370px;
-  margin-top: 20px
 }
 
 .img-results {
@@ -48,7 +56,7 @@ a:hover {
 }
 
 #guess-form {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .table > tbody > tr > td {

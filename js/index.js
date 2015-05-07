@@ -22,6 +22,7 @@ $(document).ready(function() {
         });
         $('#header').show();
         $('#main').show();
+        $("#username").text(name) ;
         getNextItem();
       } else {
         window.location.href = "done.html"

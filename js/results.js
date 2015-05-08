@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	var userId = $.cookie("mp-hackathon-userid");
 
-	var expectedNumberOfVotes = 5;
+	var expectedNumberOfVotes = 100;
 
 	$.get("/api/results/" + userId, function(data) {
 		// TODO edge case - no results yet!
@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 			var percent = Math.round(item.numResults / expectedNumberOfVotes * 100) ;
 
-			if (percent == 100) {
+			if (percent >= 100) {
 				html = html.replace(/{progress}/g, "€ " + item.avg)
 			} else {
 				var completion = progress.replace(/{perc_completed}/g, percent)

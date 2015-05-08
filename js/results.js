@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var progress = '<div class="progress"><div class="progress-bar progress-bar-info progress-bar-striped" style="width: {perc_completed}%"/></div></div>';
-	var row = '<tr> <td><img class="img-responsive img-rounded img-results" src="{img_url}"></td> <td class="{success}">{title}</td> <td class="{success}">€ {guess}</td> <td>{progress}</td> </tr>';
+	var row = '<tr class="{success}"> <td><img class="img-responsive img-rounded img-results" src="{img_url}"></td> <td>{title}</td> <td>€ {guess}</td> <td>{progress}</td> </tr>';
 
 	var userId = $.cookie("mp-hackathon-userid");
 
@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 			if (percent >= 100) {
 				html = html.replace(/{progress}/g, "€ " + item.avg)
+				var deviation = Math.abs(item.guess - item.avg) / item.avg * 100;
+				var successClass = deviation <= maxDeviation ? "success" : "";
+				html = html.replace(/{success}/g, successClass);
 			} else {
 				var completion = progress.replace(/{perc_completed}/g, percent)
 				html = html.replace(/{progress}/g, completion);
 			}
 
-			var deviation = Math.abs(item.guess - item.avg) / item.avg * 100;
-			var successClass = deviation <= maxDeviation ? "text-success" : "";
-			html = html.replace(/{success}/g, successClass);
 			// append to list
 			$("#resultsBody").append(html);
 		});

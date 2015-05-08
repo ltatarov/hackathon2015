@@ -6,6 +6,7 @@ $(document).ready(function() {
 	var userId = $.cookie("mp-hackathon-userid");
 
 	var expectedNumberOfVotes = 100;
+	var maxDeviation = 5.0;
 
 	$.get("/api/results/" + userId, function(data) {
 		// TODO edge case - no results yet!
@@ -25,7 +26,8 @@ $(document).ready(function() {
 				html = html.replace(/{progress}/g, completion);
 			}
 
-			var successClass = item.numResults >= expectedNumberOfVotes ? "text-success" : "";
+			var deviation = Math.abs(item.guess - item.avg) / item.avg * 100;
+			var successClass = deviation <= maxDeviation ? "text-success" : "";
 			html = html.replace(/{success}/g, successClass);
 			// append to list
 			$("#resultsBody").append(html);
